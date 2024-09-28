@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Report Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        .branding {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .branding img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .branding h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #0072FF;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        #status {
+            font-size: 14px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #58ff7f;
+            transition: width 0.5s ease-in-out;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #00C6FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0072FF;
+        }
+
+        .footer-link {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #0072FF;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        #downloaded-file-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            text-align: left;
+        }
+
+        #downloaded-file-list li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container -->
+    <div class="container">
+        <!-- Branding section -->
+        <div class="branding">
+            <img src="image.webp" alt="Logo">
+            <h2>Security Report Generator</h2>
+        </div>
+
+        <h1>Generate Report</h1>
+        <p>Preparing security report for this URL...</p>
+
+        <!-- Progress bar -->
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <p id="status">Please wait while we analyze the site...</p>
+
+        <!-- Cancel button -->
+        <button id="cancel-button">Cancel</button>
+
+        <!-- List of downloaded files -->
+        <ul id="downloaded-file-list"></ul>
+
+        <!-- Footer link to provide additional options -->
+        <a href="#" class="footer-link">Check Website Security</a>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
