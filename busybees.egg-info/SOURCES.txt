@@ -1,0 +1,8 @@
+LICENSE
+README.md
+busybees.py
+setup.py
+busybees.egg-info/PKG-INFO
+busybees.egg-info/SOURCES.txt
+busybees.egg-info/dependency_links.txt
+busybees.egg-info/top_level.txt
