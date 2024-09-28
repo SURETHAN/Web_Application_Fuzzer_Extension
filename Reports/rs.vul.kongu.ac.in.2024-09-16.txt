@@ -1,0 +1,314 @@
+Fierce Subdomains Bruter - Brute Forces Subdomain Discovery.
+------------------------
+
+NS: ns10.domaincontrol.com. ns09.domaincontrol.com.
+SOA: ns09.domaincontrol.com. (97.74.104.5)
+Zone: failure
+Wildcard: failure
+Found: admin.kongu.ac.in. (118.139.181.22)
+Nearby:
+{'118.139.181.17': '17.181.139.118.host.secureserver.net.',
+ '118.139.181.18': '18.181.139.118.host.secureserver.net.',
+ '118.139.181.19': '19.181.139.118.host.secureserver.net.',
+ '118.139.181.20': '20.181.139.118.host.secureserver.net.',
+ '118.139.181.21': '21.181.139.118.host.secureserver.net.',
+ '118.139.181.22': '22.181.139.118.host.secureserver.net.',
+ '118.139.181.23': '23.181.139.118.host.secureserver.net.',
+ '118.139.181.24': '24.181.139.118.host.secureserver.net.',
+ '118.139.181.25': '25.181.139.118.host.secureserver.net.',
+ '118.139.181.26': '26.181.139.118.host.secureserver.net.',
+ '118.139.181.27': '27.181.139.118.host.secureserver.net.'}
+Found: ftp.kongu.ac.in. (118.139.181.22)
+Found: ns1.kongu.ac.in. (103.196.28.141)
+Nearby:
+{'103.196.28.136': 'naac.kongu.edu.'}
+Found: ns2.kongu.ac.in. (103.196.28.140)
+Nearby:
+{'103.196.28.135': 'idp.kongu.edu.'}
+Found: portal.kongu.ac.in. (40.99.34.226)
+
+
+Nmap [FTP] - Checks if FTP service is running.
+------------------------
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-16 05:31 PDT
+Nmap scan report for kongu.ac.in (118.139.181.22)
+Host is up (0.54s latency).
+rDNS record for 118.139.181.22: 22.181.139.118.host.secureserver.net
+
+PORT   STATE SERVICE
+21/tcp open  ftp
+
+Nmap done: 1 IP address (1 host up) scanned in 1.22 seconds
+
+
+Nmap - Checks for MySQL DB
+------------------------
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-16 05:33 PDT
+Nmap scan report for kongu.ac.in (118.139.181.22)
+Host is up (0.32s latency).
+rDNS record for 118.139.181.22: 22.181.139.118.host.secureserver.net
+
+PORT     STATE SERVICE
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 1.29 seconds
+
+
+Nikto - Checks for any interesting files on the Domain.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          118.139.181.22
++ Target Hostname:    kongu.ac.in
++ Target Port:        80
++ Start Time:         2024-09-16 05:45:03 (GMT-7)
+---------------------------------------------------------------------------
++ Server: Apache
++ Root page / redirects to: https://www.kongu.ac.in/
+
+
+WhatWeb - Checks for X-XSS Protection Header
+------------------------
+
+[1m[34mhttp://kongu.ac.in[0m [302 Found] [1mApache[0m, [1mCountry[0m[[0m[22mSINGAPORE[0m][[1m[31mSG[0m], [1mHTTPServer[0m[[1m[36mApache[0m], [1mIP[0m[[0m[22m118.139.181.22[0m], [1mRedirectLocation[0m[[0m[22mhttps://www.kongu.ac.in/403.shtml[0m], [1mTitle[0m[[1m[33m302 Found[0m]
+[1m[34mhttps://www.kongu.ac.in/403.shtml[0m [403 Forbidden] [1mApache[0m, [1mCountry[0m[[0m[22mSINGAPORE[0m][[1m[31mSG[0m], [1mHTTPServer[0m[[1m[36mApache[0m], [1mIP[0m[[0m[22m118.139.181.22[0m], [1mTitle[0m[[1m[33m403 Forbidden[0m]
+
+
+Nmap - Fast Scan [Only Few Port Checks]
+------------------------
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-16 06:01 PDT
+Nmap scan report for kongu.ac.in (118.139.181.22)
+Host is up (0.70s latency).
+rDNS record for 118.139.181.22: 22.181.139.118.host.secureserver.net
+Not shown: 79 filtered tcp ports (no-response), 11 filtered tcp ports (host-unreach)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+110/tcp  open  pop3
+143/tcp  open  imap
+443/tcp  open  https
+587/tcp  open  submission
+993/tcp  open  imaps
+995/tcp  open  pop3s
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 47.95 seconds
+
+
+SSLyze - Checks for Secure Renegotiation Support and Client Renegotiation.
+------------------------
+
+
+ CHECKING CONNECTIVITY TO SERVER(S)
+ ----------------------------------
+
+   kongu.ac.in:443           => 118.139.181.22 
+
+
+ SCAN RESULTS FOR KONGU.AC.IN:443 - 118.139.181.22
+ -------------------------------------------------
+
+ * Session Renegotiation:
+       Client Renegotiation DoS Attack:   OK - Not vulnerable
+       Secure Renegotiation:              OK - Supported
+
+ SCANS COMPLETED IN 3.444284 S
+ -----------------------------
+
+ COMPLIANCE AGAINST MOZILLA TLS CONFIGURATION
+ --------------------------------------------
+
+    Disabled; use --mozilla_config={old, intermediate, modern}.
+
+
+
+XSSer - Checks for Cross-Site Scripting [XSS] Attacks.
+------------------------
+
+===========================================================================
+
+XSSer v1.8[4]: "The HiV€!" - (https://xsser.03c8.net) - 2010/2021 -> by psy
+
+===========================================================================
+Testing [Full XSS audit]... ;-)
+===========================================================================
+
+[Info] The following actions will be performed at the end:
+
+  1- Output with detailed statistics
+
+  2- Export results to files: 
+
+     - a) XSSreport.raw 
+     - b) XSSer_<target>_<datetime>.xml
+
+-------------------------
+
+[Info] REQUEST: Cross Site Tracing (XST) Vulnerability...
+
+
+[Error] WARNING: Some internal errors getting -targets-
+
+
+[Error] Not any valid source provided to start a test... Aborting!
+
+===========================================================================
+Traceback (most recent call last):
+  File "/usr/share/xsser/xsser", line 35, in <module>
+    app.run()
+  File "/usr/share/xsser/core/main.py", line 3050, in run
+    self.print_results()
+  File "/usr/share/xsser/core/main.py", line 3240, in print_results
+    fout = open("XSSreport.raw", "w") # write better than append
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'XSSreport.raw'
+
+
+DMitry - Passively Harvests Subdomains from the Domain.
+------------------------
+
+Deepmagic Information Gathering Tool
+"There be some deep magic going on"
+
+HostIP:118.139.181.22
+HostName:kongu.ac.in
+
+Gathered Subdomain information for kongu.ac.in
+---------------------------------
+Searching Google.com:80...
+HostName:www.kongu.ac.in
+HostIP:118.139.181.22
+Searching Altavista.com:80...
+Found 1 possible subdomain(s) for host kongu.ac.in, Searched 0 pages containing 0 results
+
+All scans completed, exiting
+
+
+LBD - Checks for DNS/HTTP Load Balancers.
+------------------------
+
+
+lbd - load balancing detector 0.4 - Checks if a given domain uses load-balancing.
+                                    Written by Stefan Behte (http://ge.mine.nu)
+                                    Proof-of-concept! Might give false positives.
+
+Checking for DNS-Loadbalancing: NOT FOUND
+Checking for HTTP-Loadbalancing [Server]: 
+ Apache
+ NOT FOUND
+
+Checking for HTTP-Loadbalancing [Date]: 13:11:20, 13:11:21, 13:11:22, 13:11:24, 13:11:25, 13:11:26, 13:11:27, 13:11:28, 13:11:30, 13:11:31, 13:11:32, 13:11:33, 13:11:35, 13:11:36, 13:11:37, 13:11:41, 13:11:43, 13:11:44, 13:11:45, 13:11:46, 13:11:47, 13:11:49, 13:11:50, 13:11:52, 13:11:53, 13:11:55, 13:11:56, 13:11:58, 13:12:00, 13:12:01, 13:12:03, 13:12:04, 13:12:06, 13:12:07, 13:12:09, 13:12:10, 13:12:11, 13:12:13, 13:12:15, 13:12:18, 13:12:19, 13:12:21, 13:12:23, 13:12:24, 13:12:26, 13:12:27, 13:12:28, 13:12:29, 13:12:31, 13:12:32, NOT FOUND
+
+Checking for HTTP-Loadbalancing [Diff]: NOT FOUND
+
+kongu.ac.in does NOT use Load-balancing.
+
+
+
+Nikto - Checks the Domain Headers.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          118.139.181.22
++ Target Hostname:    kongu.ac.in
++ Target Port:        80
++ Start Time:         2024-09-16 06:13:47 (GMT-7)
+---------------------------------------------------------------------------
++ Server: Apache
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ Root page / redirects to: https://www.kongu.ac.in/
++ /: Server may leak inodes via ETags, header found with file /, inode: 1070510, size: 1963, mtime: Tue Jan 23 01:15:21 2024. See: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1418
++ 266 requests: 0 error(s) and 3 item(s) reported on remote host
++ End Time:           2024-09-16 06:15:52 (GMT-7) (125 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+Host - Checks for existence of IPV6 address.
+------------------------
+
+kongu.ac.in has address 118.139.181.22
+kongu.ac.in mail is handled by 0 kongu-ac-in.mail.protection.outlook.com.
+
+
+WHOis - Checks for Administrator's Contact Information.
+------------------------
+
+Domain Name: kongu.ac.in
+Registry Domain ID: D15283-IN
+Registrar WHOIS Server:
+Registrar URL: http://www.ernet.in
+Updated Date: 2024-08-10T13:12:54Z
+Creation Date: 2004-01-31T05:00:00Z
+Registry Expiry Date: 2033-01-31T05:00:00Z
+Registrar: ERNET India
+Registrar IANA ID: 800068
+Registrar Abuse Contact Email:
+Registrar Abuse Contact Phone:
+Domain Status: ok http://www.icann.org/epp#OK
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Kongu Engineering College
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province:
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: IN
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please contact the Registrar listed above
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: Please contact the Registrar listed above
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please contact the Registrar listed above
+Name Server: ns1.kongu.ac.in
+Name Server: ns2.kongu.ac.in
+Name Server: ns09.domaincontrol.com
+Name Server: ns10.domaincontrol.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2024-09-16T14:49:20Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+Access to .IN WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the .IN registry database. The data in this record is provided by .IN Registry for informational purposes only ,and .IN does not guarantee its accuracy.  This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator or a Registrar, or NIXI except as reasonably necessary to register domain names or modify existing registrations. All rights reserved. .IN reserves the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.
+
+

@@ -1,0 +1,180 @@
+Wafw00f - Checks for Application Firewalls.
+------------------------
+
+
+                [1;97m______
+               [1;97m/      \
+              [1;97m(  W00f! )
+               [1;97m\  ____/
+               [1;97m,,    [1;92m__            [1;93m404 Hack Not Found
+           [1;96m|`-.__   [1;92m/ /                     [1;91m __     __
+           [1;96m/"  _/  [1;92m/_/                       [1;91m\ \   / /
+          [1;94m*===*    [1;92m/                          [1;91m\ \_/ /  [1;93m405 Not Allowed
+         [1;96m/     )__//                           [1;91m\   /
+    [1;96m/|  /     /---`                        [1;93m403 Forbidden
+    [1;96m\\/`   \ |                                 [1;91m/ _ \
+    [1;96m`\    /_\\_              [1;93m502 Bad Gateway  [1;91m/ / \ \  [1;93m500 Internal Error
+      [1;96m`_____``-`                             [1;91m/_/   \_\
+
+                        [1;96m~ WAFW00F : [1;94mv2.2.0 ~[1;97m
+        The Web Application Firewall Fingerprinting Toolkit
+    [0m
+[*] Checking https://kongu.ac.in
+[+] Generic Detection results:
+[*] The site https://kongu.ac.in seems to be behind a WAF or some sort of security solution
+[~] Reason: The server returns a different response code when an attack string is used.
+Normal response code is "200", while the response code to a SQL injection attack is "403"
+[~] Number of requests: 7
+
+
+Nmap [OpenSSL CCS Injection] - Checks only for CCS Injection.
+------------------------
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-16 05:20 PDT
+Nmap scan report for kongu.ac.in (118.139.181.22)
+Host is up (0.29s latency).
+rDNS record for 118.139.181.22: 22.181.139.118.host.secureserver.net
+
+PORT    STATE SERVICE
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 6.38 seconds
+
+
+Nikto - Checks for HTTP Options on the Domain.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          118.139.181.22
++ Target Hostname:    kongu.ac.in
++ Target Port:        80
++ Start Time:         2024-09-16 05:20:54 (GMT-7)
+---------------------------------------------------------------------------
++ Server: Apache
++ Root page / redirects to: https://www.kongu.ac.in/
++ 253 requests: 3 error(s) and 0 item(s) reported on remote host
++ End Time:           2024-09-16 05:24:33 (GMT-7) (219 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+Nikto - Checks for Apache Expect XSS Header.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          118.139.181.22
++ Target Hostname:    kongu.ac.in
++ Target Port:        80
++ Start Time:         2024-09-16 05:24:41 (GMT-7)
+---------------------------------------------------------------------------
++ Server: Apache
++ Root page / redirects to: https://www.kongu.ac.in/
++ 240 requests: 0 error(s) and 0 item(s) reported on remote host
++ End Time:           2024-09-16 05:26:46 (GMT-7) (125 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+ASP.Net Misconfiguration - Checks for ASP.Net Misconfiguration.
+------------------------
+
+--2024-09-16 05:26:46--  http://kongu.ac.in/%7C~.aspx
+Resolving kongu.ac.in (kongu.ac.in)... 118.139.181.22
+Connecting to kongu.ac.in (kongu.ac.in)|118.139.181.22|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://www.kongu.ac.in/%7c~.aspx [following]
+--2024-09-16 05:26:47--  https://www.kongu.ac.in/%7c~.aspx
+Resolving www.kongu.ac.in (www.kongu.ac.in)... 118.139.181.22
+Connecting to www.kongu.ac.in (www.kongu.ac.in)|118.139.181.22|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-09-16 05:26:49 ERROR 404: Not Found.
+
+
+
+Uniscan - Stress Tests the Domain.
+------------------------
+
+print() on closed filehandle $html at /usr/share/uniscan/Uniscan/Functions.pm line 430.
+Permission denied
+
+
+Fierce Subdomains Bruter - Brute Forces Subdomain Discovery.
+------------------------
+
+NS: ns10.domaincontrol.com. ns09.domaincontrol.com.
+SOA: ns09.domaincontrol.com. (97.74.104.5)
+Zone: failure
+Wildcard: failure
+Found: admin.kongu.ac.in. (118.139.181.22)
+Nearby:
+{'118.139.181.17': '17.181.139.118.host.secureserver.net.',
+ '118.139.181.18': '18.181.139.118.host.secureserver.net.',
+ '118.139.181.19': '19.181.139.118.host.secureserver.net.',
+ '118.139.181.20': '20.181.139.118.host.secureserver.net.',
+ '118.139.181.21': '21.181.139.118.host.secureserver.net.',
+ '118.139.181.22': '22.181.139.118.host.secureserver.net.',
+ '118.139.181.23': '23.181.139.118.host.secureserver.net.',
+ '118.139.181.24': '24.181.139.118.host.secureserver.net.',
+ '118.139.181.25': '25.181.139.118.host.secureserver.net.',
+ '118.139.181.26': '26.181.139.118.host.secureserver.net.',
+ '118.139.181.27': '27.181.139.118.host.secureserver.net.'}
+Found: ftp.kongu.ac.in. (118.139.181.22)
+Found: ns1.kongu.ac.in. (103.196.28.141)
+Nearby:
+{'103.196.28.136': 'naac.kongu.edu.'}
+Found: ns2.kongu.ac.in. (103.196.28.140)
+Nearby:
+{'103.196.28.135': 'idp.kongu.edu.'}
+Found: portal.kongu.ac.in. (40.99.34.226)
+
+
+Nmap [FTP] - Checks if FTP service is running.
+------------------------
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-16 05:31 PDT
+Nmap scan report for kongu.ac.in (118.139.181.22)
+Host is up (0.54s latency).
+rDNS record for 118.139.181.22: 22.181.139.118.host.secureserver.net
+
+PORT   STATE SERVICE
+21/tcp open  ftp
+
+Nmap done: 1 IP address (1 host up) scanned in 1.22 seconds
+
+
+Nikto - Checks for MS10-070 Vulnerability.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Target IP:          118.139.181.22
++ Target Hostname:    kongu.ac.in
++ Target Port:        80
++ Start Time:         2024-09-16 05:31:55 (GMT-7)
+---------------------------------------------------------------------------
++ Server: Apache
++ Root page / redirects to: https://www.kongu.ac.in/
++ 239 requests: 0 error(s) and 0 item(s) reported on remote host
++ End Time:           2024-09-16 05:33:20 (GMT-7) (85 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+WordPress Checker - Checks for WordPress Installation.
+------------------------
+
+--2024-09-16 05:33:20--  http://kongu.ac.in/wp-admin
+Resolving kongu.ac.in (kongu.ac.in)... 118.139.181.22
+Connecting to kongu.ac.in (kongu.ac.in)|118.139.181.22|:80... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://www.kongu.ac.in/wp-admin [following]
+--2024-09-16 05:33:21--  https://www.kongu.ac.in/wp-admin
+Resolving www.kongu.ac.in (www.kongu.ac.in)... 118.139.181.22
+Connecting to www.kongu.ac.in (www.kongu.ac.in)|118.139.181.22|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2024-09-16 05:33:23 ERROR 404: Not Found.
+
+
+

@@ -1,0 +1,246 @@
+AMass - Brutes Domain for Subdomains
+------------------------
+
+selfmade.ninja (FQDN) --> ns_record --> vera.ns.cloudflare.com (FQDN)
+selfmade.ninja (FQDN) --> ns_record --> piotr.ns.cloudflare.com (FQDN)
+selfmade.ninja (FQDN) --> mx_record --> alt2.aspmx.l.google.com (FQDN)
+selfmade.ninja (FQDN) --> mx_record --> aspmx.l.google.com (FQDN)
+selfmade.ninja (FQDN) --> mx_record --> alt3.aspmx.l.google.com (FQDN)
+selfmade.ninja (FQDN) --> mx_record --> alt4.aspmx.l.google.com (FQDN)
+selfmade.ninja (FQDN) --> mx_record --> alt1.aspmx.l.google.com (FQDN)
+
+The enumeration has finished
+
+
+Nikto - Checks for HTTP Options on the Domain.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Multiple IPs found: 95.111.195.229, 64:ff9b::5f6f:c3e5
++ Target IP:          95.111.195.229
++ Target Hostname:    selfmade.ninja
++ Target Port:        80
++ Start Time:         2024-09-06 02:32:39 (GMT-7)
+---------------------------------------------------------------------------
++ Server: No banner retrieved
++ Root page / redirects to: https://selfmade.ninja/
+
+
+Wafw00f - Checks for Application Firewalls.
+------------------------
+
+
+                   [1;97m______
+                  [1;97m/      \
+                 [1;97m(  Woof! )
+                  [1;97m\  ____/                      [1;91m)
+                  [1;97m,,                           [1;91m) ([1;93m_
+             [1;93m.-. [1;97m-    [1;92m_______                 [1;91m( [1;93m|__|
+            [1;93m()``; [1;92m|==|_______)                [1;91m.)[1;93m|__|
+            [1;93m/ ('        [1;92m/|\                  [1;91m(  [1;93m|__|
+        [1;93m(  /  )       [1;92m / | \                  [1;91m. [1;93m|__|
+         [1;93m\(_)_))      [1;92m/  |  \                   [1;93m|__|[0m
+
+                    [1;96m~ WAFW00F : [1;94mv2.2.0 ~[1;97m
+    The Web Application Firewall Fingerprinting Toolkit
+    [0m
+[*] Checking https://selfmade.ninja
+[+] Generic Detection results:
+[-] No WAF detected by the generic detection
+[~] Number of requests: 7
+
+
+Nikto - Checks the Domain Headers.
+------------------------
+
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Multiple IPs found: 95.111.195.229, 64:ff9b::5f6f:c3e5
++ Target IP:          95.111.195.229
++ Target Hostname:    selfmade.ninja
++ Target Port:        80
++ Start Time:         2024-09-06 02:46:52 (GMT-7)
+---------------------------------------------------------------------------
++ Server: No banner retrieved
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ Root page / redirects to: https://selfmade.ninja/
++ 266 requests: 0 error(s) and 2 item(s) reported on remote host
++ End Time:           2024-09-06 02:48:21 (GMT-7) (89 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+
+
+WhatWeb - Checks for X-XSS Protection Header
+------------------------
+
+[1m[34mhttp://selfmade.ninja[0m [302 Found] [1mCountry[0m[[0m[22mUKRAINE[0m][[1m[31mUA[0m], [1mIP[0m[[0m[22m95.111.195.229[0m], [1mRedirectLocation[0m[[0m[22mhttps://selfmade.ninja/[0m]
+[1m[34mhttps://selfmade.ninja/[0m [200 OK] [1mApache[0m[[1m[32m2.4.52[0m], [1mBootstrap[0m, [1mCookies[0m[[0m[22mPHPSESSID[0m], [1mCountry[0m[[0m[22mUKRAINE[0m][[1m[31mUA[0m], [1mFrame[0m, [1mHTML5[0m, [1mHTTPServer[0m[[1m[31mUbuntu Linux[0m][[1m[36mApache/2.4.52 (Ubuntu)[0m], [1mIP[0m[[0m[22m95.111.195.229[0m], [1mMeta-Author[0m[[0m[22mSibidharan Nandhakumar[0m], [1mOpen-Graph-Protocol[0m, [1mScript[0m[[0m[22mtext/javascript[0m], [1mTitle[0m[[1m[33mOnline Courses - Learn Anywhere Everywhere | SNA[0m], [1mUncommonHeaders[0m[[0m[22maccess-control-allow-origin[0m], [1mX-Powered-By[0m[[0m[22mSelfmade Ninja Labs[0m], [1mX-UA-Compatible[0m[[0m[22mIE=edge[0m], [1mYouTube[0m
+
+
+DMitry - Passively Harvests Subdomains from the Domain.
+------------------------
+
+Deepmagic Information Gathering Tool
+"There be some deep magic going on"
+
+HostIP:95.111.195.229
+HostName:selfmade.ninja
+
+Gathered Subdomain information for selfmade.ninja
+---------------------------------
+Searching Google.com:80...
+HostName:labs.selfmade.ninja
+HostIP:106.51.76.75
+HostName:academy.selfmade.ninja
+HostIP:95.111.195.229
+HostName:portal.selfmade.ninja
+HostIP:94.237.76.85
+HostName:blog.selfmade.ninja
+HostIP:106.51.76.75
+HostName:git.selfmade.ninja
+HostIP:95.111.201.95
+HostName:docs.selfmade.ninja
+HostIP:106.51.76.75
+Searching Altavista.com:80...
+Found 6 possible subdomain(s) for host selfmade.ninja, Searched 0 pages containing 0 results
+
+All scans completed, exiting
+
+
+LBD - Checks for DNS/HTTP Load Balancers.
+------------------------
+
+
+lbd - load balancing detector 0.4 - Checks if a given domain uses load-balancing.
+                                    Written by Stefan Behte (http://ge.mine.nu)
+                                    Proof-of-concept! Might give false positives.
+
+Checking for DNS-Loadbalancing: NOT FOUND
+Checking for HTTP-Loadbalancing [Server]: 
+
+ NOT FOUND
+
+Checking for HTTP-Loadbalancing [Date]: 09:59:51, 09:59:54, 09:59:55, 09:59:56, 09:59:58, 09:59:59, 09:59:59, 10:00:00, 10:00:01, 10:00:03, 10:00:04, 10:00:06, 10:00:07, 10:00:08, 10:00:09, 10:00:10, 10:00:11, 10:00:12, 10:00:12, 10:00:13, 10:00:15, 10:00:16, 10:00:17, 10:00:18, 10:00:19, 10:00:20, 10:00:22, 10:00:24, 10:00:25, 10:00:26, 10:00:27, 10:00:28, 10:00:29, 10:00:30, 10:00:31, 10:00:32, 10:00:33, 10:00:34, 10:00:35, 10:00:37, 10:00:38, 10:00:39, 10:00:41, 10:00:42, 10:00:43, 10:00:45, 10:00:46, 10:00:47, 10:00:47, 10:00:49, NOT FOUND
+
+Checking for HTTP-Loadbalancing [Diff]: NOT FOUND
+
+selfmade.ninja does NOT use Load-balancing.
+
+
+
+WHOis - Checks for Administrator's Contact Information.
+------------------------
+
+Domain Name: selfmade.ninja
+Registry Domain ID: dab0a4dbf2204321a6af026c009b8aa6-DONUTS
+Registrar WHOIS Server: whois.godaddy.com/
+Registrar URL: http://www.godaddy.com/domains/search.aspx?ci=8990
+Updated Date: 2024-06-27T00:14:08Z
+Creation Date: 2020-05-19T16:35:39Z
+Registry Expiry Date: 2025-05-19T16:35:39Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Arizona
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: US
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: vera.ns.cloudflare.com
+Name Server: piotr.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2024-09-06T10:01:37Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+Terms of Use: Access to WHOIS information is provided to assist persons in determining the contents of a domain name registration record in the registry database. The data in this record is provided by Identity Digital or the Registry Operator for informational purposes only, and accuracy is not guaranteed. This service is intended only for query-based access. You agree that you will use this data only for lawful purposes and that, under no circumstances will you use this data to (a) allow, enable, or otherwise support the transmission by e-mail, telephone, or facsimile of mass unsolicited, commercial advertising or solicitations to entities other than the data recipient's own existing customers; or (b) enable high volume, automated, electronic processes that send queries or data to the systems of Registry Operator, a Registrar, or Identity Digital except as reasonably necessary to register domain names or modify existing registrations. When using the Whois service, please consider the following: The Whois service is not a replacement for standard EPP commands to the SRS service. Whois is not considered authoritative for registered domain objects. The Whois service may be scheduled for downtime during production or OT&E maintenance periods. Queries to the Whois services are throttled. If too many queries are received from a single IP address within a specified time, the service will begin to reject further queries for a period of time to prevent disruption of Whois service access. Abuse of the Whois system through data mining is mitigated by detecting and limiting bulk query access from single sources. Where applicable, the presence of a [Non-Public Data] tag indicates that such data is not made publicly available due to applicable data privacy laws or requirements. Should you wish to contact the registrant, please refer to the Whois records available through the registrar URL listed above. Access to non-public data may be provided, upon request, where it can be re
+asonably confirmed that the requester holds a specific legitimate interest and a proper legal basis for accessing the withheld data. Access to this data provided by Identity Digital can be requested by submitting a request via the form found at https://www.identity.digital/about/policies/whois-layered-access/. The Registrar of Record identified in this output may have an RDDS service that can be queried for additional information on how to contact the Registrant, Admin, or Tech contact of the queried domain name. Identity Digital Inc. and Registry Operator reserve the right to modify these terms at any time. By submitting this query, you agree to abide by this policy.
+
+
+Nmap - Fast Scan [Only Few Port Checks]
+------------------------
+
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-09-06 03:06 PDT
+Nmap scan report for selfmade.ninja (95.111.195.229)
+Host is up (0.13s latency).
+Other addresses for selfmade.ninja (not scanned): 64:ff9b::5f6f:c3e5
+rDNS record for 95.111.195.229: 95-111-195-229.sg-sin1.upcloud.host
+Not shown: 96 filtered tcp ports (no-response), 1 closed tcp port (conn-refused)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE
+22/tcp  open  ssh
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 15.18 seconds
+
+
+SSLyze - Checks for Secure Renegotiation Support and Client Renegotiation.
+------------------------
+
+
+ CHECKING CONNECTIVITY TO SERVER(S)
+ ----------------------------------
+
+   selfmade.ninja:443        => 95.111.195.229 
+
+
+ SCAN RESULTS FOR SELFMADE.NINJA:443 - 95.111.195.229
+ ----------------------------------------------------
+
+ * Session Renegotiation:
+       Client Renegotiation DoS Attack:   OK - Not vulnerable
+       Secure Renegotiation:              OK - Supported
+
+ SCANS COMPLETED IN 2.997389 S
+ -----------------------------
+
+ COMPLIANCE AGAINST MOZILLA TLS CONFIGURATION
+ --------------------------------------------
+
+    Disabled; use --mozilla_config={old, intermediate, modern}.
+
+
+
